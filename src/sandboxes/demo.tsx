@@ -20,7 +20,8 @@ export default function App() {
               else video?.pause()
             }}
             src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-            ref={videoRef}></video>
+            ref={videoRef}
+          />
 
           {video && <Controller video={video} />}
         </div>

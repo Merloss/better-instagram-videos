@@ -14,7 +14,7 @@ export default function Autoskip() {
           checked={autoSkip}
           onChange={() => setAutoSkip(!autoSkip)}
         />
-        <span className="bigv-slider"></span>
+        <span className="bigv-slider" />
         <span>{chrome.i18n.getMessage("autoskipLabel")}</span>
       </label>
     </div>

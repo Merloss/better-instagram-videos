@@ -68,7 +68,7 @@ export default function ProgressBarHorizontal({
 
   const updateProgressBar = () => {
     if (isDragging) setProgressBar(progress)
-    if (isNaN(progress) || isDragging) return
+    if (Number.isNaN(progress) || isDragging) return
 
     const animateProgress = () => {
       setProgressBar((currentProgress) => {
@@ -148,7 +148,7 @@ export default function ProgressBarHorizontal({
           onMouseLeave={() => setShowTooltip(false)}
           onMouseDown={(e) => [
             setDragging(true),
-            mouseMoveEvent(e as any as MouseEvent, true)
+            mouseMoveEvent(e as unknown as MouseEvent, true)
           ]}
         />
         <div

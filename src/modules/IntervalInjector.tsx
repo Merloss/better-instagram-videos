@@ -30,11 +30,11 @@ export default class IntervalInjector extends Injector {
       )
         continue
       video.setAttribute("bigv-attached-listeners", "")
-      ;["play", "timeupdate", "playing"].forEach((event) => {
+      for (const event of ["play", "timeupdate", "playing"]) {
         video.addEventListener(event, () => {
-          this.inject(video as HTMLVideoElement, video.parentElement!)
+          this.inject(video as HTMLVideoElement, video.parentElement)
         })
-      })
+      }
     }
   }
 

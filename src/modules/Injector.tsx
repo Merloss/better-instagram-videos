@@ -120,7 +120,7 @@ export default class Injector {
       this.improvePerformance
     ) {
       for (let i = 0; i < this.removeCount; i++) {
-        const [_, parent] = this.injectedList.shift()!
+        const [_, parent] = this.injectedList.shift()
         parent.remove()
       }
     }
@@ -132,9 +132,9 @@ export default class Injector {
    */
   public delete() {
     this.beforeDelete()
-    this.injectedList.forEach(([_, parent]) => {
+    for (const [_, parent] of this.injectedList) {
       parent.remove()
-    })
+    }
     this.injectedList.splice(0, this.injectedList.length)
     this.deleted()
   }
@@ -179,7 +179,7 @@ export default class Injector {
     const index = params.get("img_index")
     const downloadableMedia: DownloadableMedia = {
       id: id ?? "",
-      index: index ? parseInt(index) : undefined
+      index: index ? Number.parseInt(index) : undefined
     }
 
     createRoot(controller).render(

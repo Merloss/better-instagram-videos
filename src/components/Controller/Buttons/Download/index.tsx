@@ -38,6 +38,7 @@ export default function DownloadButton({
   return (
     <div
       role="button"
+      tabIndex={0}
       onClick={download}
       className={inside ? "bigv-inside-download" : ""}>
       <DownloadIcon aria-label="Download" />

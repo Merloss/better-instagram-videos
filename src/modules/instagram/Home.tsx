@@ -5,13 +5,9 @@ import IntervalInjector, {
 } from "../IntervalInjector"
 
 export default class Home extends IntervalInjector {
-  constructor(options?: IntervalInjectorOptions) {
-    super(options)
-  }
-
   public beforeInject(): void {
-    document.querySelectorAll(IG_HOME_VOLUME_INDICATOR).forEach((svg) => {
+    for (const svg of document.querySelectorAll(IG_HOME_VOLUME_INDICATOR)) {
       svg.parentElement?.parentElement?.parentElement?.remove()
-    })
+    }
   }
 }

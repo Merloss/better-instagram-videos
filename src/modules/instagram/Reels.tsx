@@ -35,9 +35,9 @@ export default class Reels extends IntervalInjector {
 
   public beforeInject(): void {
     // Remove the mute & unmute button
-    document.querySelectorAll(IG_REELS_VOLUME_INDICATOR).forEach((svg) => {
+    for (const svg of document.querySelectorAll(IG_REELS_VOLUME_INDICATOR)) {
       svg.parentElement?.remove()
-    })
+    }
   }
 
   public beforeDelete(): void {
@@ -72,9 +72,9 @@ export default class Reels extends IntervalInjector {
 
       const commentsDialog = document.querySelector("div[role='dialog']")
       if (commentsDialog) {
-        document.querySelectorAll("video").forEach((v) => {
-          if (!v.paused) v.pause()
-        })
+        for (const video of document.querySelectorAll("video")) {
+          if (!video.paused) video.pause()
+        }
       }
     }, 750)
   }
